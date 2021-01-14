@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -119,6 +120,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-
 #  分页大小
-PAGE_SIZE = 20
+PAGE_SIZE = 10
+
+# 关闭后台 UI 主页
+SIMPLEUI_HOME_INFO = False

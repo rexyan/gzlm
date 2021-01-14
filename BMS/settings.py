@@ -118,3 +118,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+
+#  分页大小
+PAGE_SIZE = 20

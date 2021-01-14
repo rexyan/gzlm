@@ -2,40 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>图书管理系统</title>
+    <title>贵州快递物流集聚区管理委员会每日车辆到达统计表</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 <body>
 <table class="table">
-    <h2 align="center">xxx</h2>
+    <h2 align="center">贵州快递物流集聚区管理委员会每日车辆到达统计表</h2>
   <thead class="thead-light">
     <tr>
-      <th scope="col"></th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Username</th>
+      <th scope="col">序号</th>
+      <th scope="col">企业名称</th>
+      <th scope="col">日期</th>
+      <th scope="col">车牌号</th>
+      <th scope="col">驾驶人</th>
+      <th scope="col">身份证号</th>
+      <th scope="col">联系方式</th>
+      <th scope="col">驾乘人员</th>
+      <th scope="col">身份证号</th>
+      <th scope="col">联系方式</th>
+      <th scope="col">发出地区</th>
+      <th scope="col">到达地区</th>
+      <th scope="col">到达企业时间</th>
+      <th scope="col">离开企业时间</th>
+      <th scope="col">完成状态</th>
+      <th scope="col">车辆归属</th>
+      <th scope="col">备注</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    {% for lm in all_lm %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ lm.company_name }}</td>
+          <td>{{ lm.date }}</td>
+          <td>{{ lm.number_plate }}</td>
+          <td>{{ lm.driver }}</td>
+          <td>{{ lm.id_card1 }}</td>
+          <td>{{ lm.contact_detail1 }}</td>
+          <td>{{ lm.driver2 }}</td>
+          <td>{{ lm.id_card2 }}</td>
+          <td>{{ lm.contact_detail2 }}</td>
+          <td>{{ lm.issued_area }}</td>
+          <td>{{ lm.arrival_area }}</td>
+          <td>{{ lm.arrival_time }}</td>
+          <td>{{ lm.leave_time }}</td>
+          <td>{{ lm.status }}</td>
+          <td>{{ lm.car_attribution }}</td>
+          <td>{{ lm.remark }}</td>
+        </tr>
+    {% endfor %}
+
   </tbody>
 </table>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
